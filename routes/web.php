@@ -59,4 +59,14 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::post('/update/type', 'UpdateType')->name('update.type');
         Route::get('/delet/etype{id}', 'DeleteType')->name('delete.type');
     }); // end Property Type
+
+    // Amenities Type
+    Route::controller(PropertyTypeController::class)->group(function () {
+        Route::get('/all/amenitie', 'AllAmenities')->name('all.amenitie');
+        Route::get('/add/amenitie', 'AddAmenities')->name('add.amenitie');
+        Route::post('/store/amenitie', 'StoreAmenities')->name('store.amenitie');
+        Route::get('/edit/amenitie{id}', 'EditAmenities')->name('edit.amenitie');
+        Route::post('/update/amenitie', 'UpdateAmenities')->name('update.amenitie');
+        Route::get('/delet/amenitie{id}', 'DeleteAmenities')->name('delete.amenitie');
+    }); // end Amenities Type
 });//End Group Admin Middleware
